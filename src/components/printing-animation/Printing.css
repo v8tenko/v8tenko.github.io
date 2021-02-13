@@ -1,0 +1,32 @@
+.printing > * {
+    display: inline-block;
+}
+
+.printing {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cursor {
+    width: 5px;
+    height: 40px;
+    background: white;
+    margin-left: 10px;
+}
+
+.blinking {
+    animation: cursor-blink 1.2s forwards infinite;
+}
+
+@keyframes cursor-blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

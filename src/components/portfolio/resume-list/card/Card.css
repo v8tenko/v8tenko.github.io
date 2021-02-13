@@ -1,0 +1,32 @@
+.card {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: 2% 0;
+}
+
+.card > p {
+    color: var(--black-white);
+    transition: all 100ms;
+}
+
+.title {
+    color: var(--black-white);
+    font-size: 2.1rem;
+    margin-bottom: 1%;
+}
+
+.card > p:last-child {
+    font-size: 1.4rem;
+}
+
+.card:hover > p {
+    color: white;
+}
+
+
+
+
+

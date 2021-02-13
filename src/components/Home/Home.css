@@ -1,0 +1,131 @@
+.home {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.home > * {
+    flex: 1 0;
+    background: var(--background-color);
+    height: inherit;
+    font-family: "JetBrains Mono", sans-serif;
+    overflow: hidden;
+}
+
+.home > .name {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    text-align: left;
+}
+
+.name > p:first-child {
+    margin-top: 26vh;
+}
+
+.home p {
+    width: 60%;
+    position: relative;
+    left: 5vw;
+    font-size: 3.2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.name-p {
+    padding-bottom: 2vh;
+}
+
+.name-p ~ p, .name > p:first-child:before {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.name > p:first-child:before {
+    content: "// hello world";
+    font-size: .9rem;
+}
+
+.home > .menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#menu ul {
+    position: fixed;
+    right: 8%;
+    top: 26%;
+}
+
+.picture {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    opacity: 1;
+    position: relative;
+    left: 12.5%;
+}
+
+.picture-code {
+    position: relative;
+    height: 18%;
+    width: 40%;
+    bottom: 10%;
+    object-fit: scale-down;
+}
+
+.pics {
+    height: 100%;
+    width: 60%;
+}
+
+.picture,
+.picture-code {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#menu {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 12%;
+}
+
+.menu-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: rgba(255, 255, 255, .6);
+    font-size: 1.4rem;
+    transition: all 200ms;
+}
+
+.menu-element:not(:first-child) {
+    padding: .8vh 0;
+}
+
+.menu-element > p {
+    color: rgba(255, 255, 255, .6);
+    font-size: 1.4rem;
+    transition: all 400ms;
+    transform-origin: 70% 50%;
+}
+
+.menu-element:hover {
+    text-decoration: line-through;
+    color: white;
+}
+
