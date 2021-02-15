@@ -10,13 +10,13 @@
 
 .cursor {
     width: 5px;
-    height: 40px;
+    height: 2rem;
     background: white;
     margin-left: 10px;
 }
 
 .blinking {
-    animation: cursor-blink 1.2s forwards infinite;
+    animation: cursor-blink 1s forwards infinite;
 }
 
 @keyframes cursor-blink {

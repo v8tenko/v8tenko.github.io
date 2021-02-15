@@ -20,7 +20,7 @@ export default function Printing({time = 5, children, className, showCursor = fa
       setBlinking(false)
     }
     setContent(prevState => prevState + string[i])
-    setTimeout(() => printDelayed(string, i + 1, id), time)
+    setTimeout(() => printDelayed(string, i + 1, id), time / string.length)
   }
 
   useEffect(() => {

@@ -10,15 +10,33 @@ export default class DataHelper {
         shortDescription: 'Ecology tracker in Moscow',
         longDescription: 'hello world i love anime and плановую экономику',
         source: 'http://31.media.tumblr.com/63f0258cb5e3636fc462732d0872a42d/tumblr_mq23irvWch1sxcg1zo2_500.gif',
-        id: 'a'
+        id: 'a',
+        type: 'mobile'
       },
       {
         title: 'a.contoller)',
         shortDescription: 'Control your smartphone with your eyes',
         longDescription: this.lorem,
         source: 'https://cdn23.img.ria.ru/images/147870/22/1478702220_0:0:1742:980_600x0_80_0_0_5c06293d79602d9b4cfabd42de28c2f8.jpg',
-        id: 'b'
-      }
+        id: 'b',
+        type: 'web'
+      },
+      {
+        title: 'Tokyo Ghoul',
+        shortDescription: 'Control your smartphone with your eyes',
+        longDescription: this.lorem,
+        source: 'https://cdn23.img.ria.ru/images/147870/22/1478702220_0:0:1742:980_600x0_80_0_0_5c06293d79602d9b4cfabd42de28c2f8.jpg',
+        id: 'c',
+        type: 'web'
+      },
+      {
+        title: 'ZeroTwo ',
+        shortDescription: 'Control your smartphone with your eyes',
+        longDescription: this.lorem,
+        source: 'https://cdn23.img.ria.ru/images/147870/22/1478702220_0:0:1742:980_600x0_80_0_0_5c06293d79602d9b4cfabd42de28c2f8.jpg',
+        id: 'b',
+        type: 'backend'
+      },
     ]
   }
 }

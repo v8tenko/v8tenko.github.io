@@ -14,7 +14,7 @@ export default function Card({title, shortDescription, id}) {
       setCurrentProject(newProject)
     }
     const element = document.querySelector(`#${id}`)
-    element.addEventListener('mouseenter', callback)
+    element.addEventListener('click', callback)
 
     return () => element.removeEventListener('mouseleave', callback)
   }, [id, setCurrentProject, title, shortDescription])
