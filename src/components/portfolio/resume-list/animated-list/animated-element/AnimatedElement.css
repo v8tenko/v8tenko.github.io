@@ -1,0 +1,7 @@
+.hiding {
+    transform: scale(1, 1);
+}
+
+.wrap {
+    transition: all 0200ms;
+}

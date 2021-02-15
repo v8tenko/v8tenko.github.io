@@ -1,7 +1,10 @@
 export default class DataHelper {
 
   static lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent massa purus, vestibulum ac tempor sed, luctus a mauris. In vitae enim non orci dignissim blandit non at dolor. Fusce posuere lacinia sem in sollicitudin. Quisque hendrerit quam vel quam bibendum.'
+  static test = 'https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=4928&q=80'
+  static test2 = 'https://images.unsplash.com/photo-1414872785488-7620d2ae7566?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3450&q=80'
   static data = this.getData()
+
 
   static getData() {
     return [
@@ -9,7 +12,8 @@ export default class DataHelper {
         title: 'EcoGis',
         shortDescription: 'Ecology tracker in Moscow',
         longDescription: 'hello world i love anime and плановую экономику',
-        source: 'http://31.media.tumblr.com/63f0258cb5e3636fc462732d0872a42d/tumblr_mq23irvWch1sxcg1zo2_500.gif',
+        source: this.test,
+        isRemoving: false,
         id: 'a',
         type: 'mobile'
       },
@@ -17,7 +21,8 @@ export default class DataHelper {
         title: 'a.contoller)',
         shortDescription: 'Control your smartphone with your eyes',
         longDescription: this.lorem,
-        source: 'https://cdn23.img.ria.ru/images/147870/22/1478702220_0:0:1742:980_600x0_80_0_0_5c06293d79602d9b4cfabd42de28c2f8.jpg',
+        source: this.test,
+        isRemoving: false,
         id: 'b',
         type: 'web'
       },
@@ -25,7 +30,8 @@ export default class DataHelper {
         title: 'Tokyo Ghoul',
         shortDescription: 'Control your smartphone with your eyes',
         longDescription: this.lorem,
-        source: 'https://cdn23.img.ria.ru/images/147870/22/1478702220_0:0:1742:980_600x0_80_0_0_5c06293d79602d9b4cfabd42de28c2f8.jpg',
+        source: this.test2,
+        isRemoving: false,
         id: 'c',
         type: 'web'
       },
@@ -33,8 +39,9 @@ export default class DataHelper {
         title: 'ZeroTwo ',
         shortDescription: 'Control your smartphone with your eyes',
         longDescription: this.lorem,
-        source: 'https://cdn23.img.ria.ru/images/147870/22/1478702220_0:0:1742:980_600x0_80_0_0_5c06293d79602d9b4cfabd42de28c2f8.jpg',
-        id: 'b',
+        source: this.test2,
+        isRemoving: false,
+        id: 'd',
         type: 'backend'
       },
     ]

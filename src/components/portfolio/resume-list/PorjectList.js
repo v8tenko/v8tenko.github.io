@@ -1,20 +1,26 @@
-import React, {createRef, useContext, useRef, useState} from 'react'
+import React, {createRef, useContext, useRef, useState, useReducer} from 'react'
 import './ProjectList.css'
 import Card from "./card/Card";
 import Info from "./card/Info";
 import DataHelper from "../../../utils/DataHelper";
 import {ProjectContext} from "../../../providers/CurrentProjectProvider";
-import {AnimatedList} from "./animated-list/AnimatedList";
 import {AnimatedElement} from "./animated-list/animated-element/AnimatedElement";
 
 export default function ProjectList({typesList}) {
 
+  const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
   const [data, setData] = useState(DataHelper.data)
   const [project,] = useContext(ProjectContext)
 
   function changeType(newType) {
     const newProjects = DataHelper.data.filter(element => newType === 'all' || element.type === newType)
-    setData(newProjects)
+    data.forEach(element => {
+      element.isRemoving = !newProjects.includes(element)
+    })
+    forceUpdate()
+    setTimeout(() => {
+      setData(newProjects)
+    }, 200)
   }
 
   return (
@@ -36,6 +42,7 @@ export default function ProjectList({typesList}) {
                 data.map(element => {
                   return <AnimatedElement
                     key={element.id}
+                    isRemoving={element.isRemoving ?? false}
                     ref={createRef()}
                   >
                     <Card

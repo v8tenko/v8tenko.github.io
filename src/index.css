@@ -28,7 +28,7 @@ code {
 }
 
 html {
-  font-size: 1.1vw;
+  font-size: 18px;
   overflow-x: hidden;
   background: var(--background-color);
 }
