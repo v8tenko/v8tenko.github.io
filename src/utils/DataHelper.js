@@ -9,15 +9,15 @@ export default class DataHelper {
         title: 'EcoGis',
         shortDescription: 'Ecology tracker in Moscow',
         longDescription: 'hello world i love anime and плановую экономику',
-        source: 'http://31.media.tumblr.com/63f0258cb5e3636fc462732d0872a42d/tumblr_mq23irvWch1sxcg1zo2_500.gif',
+        source: 'https://diskomir.ru/upload/iblock/79a/79a7e4ef1582a9f30df77bd8771266c8.jpg',
         id: 'a',
         type: 'mobile'
       },
       {
         title: 'a.contoller)',
         shortDescription: 'Control your smartphone with your eyes',
-        longDescription: this.lorem,
-        source: 'https://cdn23.img.ria.ru/images/147870/22/1478702220_0:0:1742:980_600x0_80_0_0_5c06293d79602d9b4cfabd42de28c2f8.jpg',
+        longDescription: this.lorem.substring(0, 200),
+        source: 'https://images.unsplash.com/photo-1593786189301-461faf967779?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80',
         id: 'b',
         type: 'web'
       },
@@ -25,16 +25,16 @@ export default class DataHelper {
         title: 'Tokyo Ghoul',
         shortDescription: 'Control your smartphone with your eyes',
         longDescription: this.lorem,
-        source: 'https://cdn23.img.ria.ru/images/147870/22/1478702220_0:0:1742:980_600x0_80_0_0_5c06293d79602d9b4cfabd42de28c2f8.jpg',
+        source: 'https://images.unsplash.com/photo-1611888258376-8b1b2026262b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
         id: 'c',
         type: 'web'
       },
       {
         title: 'ZeroTwo ',
         shortDescription: 'Control your smartphone with your eyes',
-        longDescription: this.lorem,
-        source: 'https://cdn23.img.ria.ru/images/147870/22/1478702220_0:0:1742:980_600x0_80_0_0_5c06293d79602d9b4cfabd42de28c2f8.jpg',
-        id: 'b',
+        longDescription: this.lorem.substring(0, 300),
+        source: 'https://images.unsplash.com/photo-1611128371650-fea6baac63ab?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80',
+        id: 'd',
         type: 'backend'
       },
     ]

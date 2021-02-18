@@ -2,6 +2,7 @@ import './App.css';
 import React from "react";
 import Home from './components/Home/Home'
 import Portfolio from "./components/portfolio/Portfolio";
+import Education from "./components/experience/Education";
 
 function App() {
 
@@ -15,7 +16,8 @@ function App() {
   return (
     <div className=".App">
         <Home menuItems={menuElements}  />
-        <Portfolio/>
+        <Portfolio />
+        <Education />
     </div>
   )
 }

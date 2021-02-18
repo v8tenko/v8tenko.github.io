@@ -8,10 +8,14 @@ export default function Info({source, title, longDescription}) {
   return (
     <div className="info">
       <div className="projects-image" style={{
-        background: `url(${source}) no-repeat no-repeat`
+        backgroundImage: `url(${source})`,
+        backgroundPosition: 'right center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        transition: 'all 200ms'
       }}/>
 
-      <Printing time={500} showCursor={true} className='title'>
+      <Printing delay={30} showCursor={true} className='title'>
         {title}
       </Printing>
       <p> {longDescription} </p>

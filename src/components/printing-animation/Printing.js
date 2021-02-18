@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import './Printing.css'
 
-export default function Printing({time = 5, children, className, showCursor = false}) {
+export default function Printing({time = 5, delay, children, className, showCursor = false}) {
   const [content, setContent] = useState('')
   const [blinking, setBlinking] = useState(false)
   const currentProcess = useRef(0)
@@ -20,7 +20,7 @@ export default function Printing({time = 5, children, className, showCursor = fa
       setBlinking(false)
     }
     setContent(prevState => prevState + string[i])
-    setTimeout(() => printDelayed(string, i + 1, id), time / string.length)
+    setTimeout(() => printDelayed(string, i + 1, id), delay ?? time / string.length)
   }
 
   useEffect(() => {

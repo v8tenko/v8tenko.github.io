@@ -1,6 +1,7 @@
 import React, {forwardRef, useEffect, useLayoutEffect, useRef, useState} from 'react'
+import './AnimatedElement.css'
 
-export const AnimatedElement = forwardRef(({children}, ref) => {
+export const AnimatedElement = forwardRef(({children, isRemoving}, ref) => {
 
   const boundingBox = useRef({})
   const prevBoundingBox = useRef(null)
@@ -35,11 +36,11 @@ export const AnimatedElement = forwardRef(({children}, ref) => {
 
   return (
     <div
-      className="wrap"
+      className={`wrap${isRemoving ? ' removing' : ''}`}
       ref={ref}
       style={{
         transition: `all ${time}ms`,
-        transform: `translateY(${translate.y}px)`
+        transform: `translateY(${translate.y}px)`,
       }}
     >
       {children}

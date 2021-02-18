@@ -10,8 +10,7 @@ export default function Card({title, shortDescription, id}) {
 
   useEffect(() => {
     const callback = () => {
-      const newProject = DataHelper.data.filter(element => element.id === id)[0]
-      setCurrentProject(newProject)
+      setCurrentProject(DataHelper.data.findIndex(element => element.id === id))
     }
     const element = document.querySelector(`#${id}`)
     element.addEventListener('click', callback)

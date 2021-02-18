@@ -1,0 +1,12 @@
+.experience {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.experience > div {
+    height: 100%;
+    width: 100%;
+    flex: 1 1;
+}

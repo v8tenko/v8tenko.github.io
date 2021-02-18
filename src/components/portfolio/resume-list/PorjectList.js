@@ -1,4 +1,4 @@
-import React, {createRef, useContext, useRef, useState} from 'react'
+import React, {createRef, useContext, useReducer, useState} from 'react'
 import './ProjectList.css'
 import Card from "./card/Card";
 import Info from "./card/Info";
@@ -7,10 +7,13 @@ import {ProjectContext} from "../../../providers/CurrentProjectProvider";
 import {AnimatedList} from "./animated-list/AnimatedList";
 import {AnimatedElement} from "./animated-list/animated-element/AnimatedElement";
 
+
 export default function ProjectList({typesList}) {
 
   const [data, setData] = useState(DataHelper.data)
   const [project,] = useContext(ProjectContext)
+  const [, forceUpdate] = useReducer(x => x + 1, 0);
+
 
   function changeType(newType) {
     const newProjects = DataHelper.data.filter(element => newType === 'all' || element.type === newType)
@@ -37,6 +40,7 @@ export default function ProjectList({typesList}) {
                   return <AnimatedElement
                     key={element.id}
                     ref={createRef()}
+                    isRemoving={element.isRemoving}
                   >
                     <Card
                       title={element.title}
@@ -48,11 +52,13 @@ export default function ProjectList({typesList}) {
               }
           </div>
           <div>
-            <Info
-              title={project.title}
-              longDescription={project.longDescription}
-              source={project.source}
-            />
+            {
+              <Info
+                source={DataHelper.data[project].source}
+                title={DataHelper.data[project].title}
+                longDescription={DataHelper.data[project].longDescription}
+              />
+            }
           </div>
         </div>
       </div>
