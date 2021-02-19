@@ -26,6 +26,10 @@
     color: white;
 }
 
+.card.colored > * {
+    color: white;
+}
+
 
 
 

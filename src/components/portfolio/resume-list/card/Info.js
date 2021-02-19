@@ -11,8 +11,7 @@ export default function Info({source, title, longDescription}) {
         backgroundImage: `url(${source})`,
         backgroundPosition: 'right center',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        transition: 'all 200ms'
+        backgroundSize: 'cover'
       }}/>
 
       <Printing delay={30} showCursor={true} className='title'>

@@ -31,10 +31,10 @@
 }
 
 .projects-grid > .projects-name {
-    flex: .7 1;
+    flex: 1.55 1;
 }
 
-.projects-grid > * {
+.projects-grid .info {
     flex: 1 1;
 }
 

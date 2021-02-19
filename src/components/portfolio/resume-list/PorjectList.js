@@ -12,11 +12,11 @@ export default function ProjectList({typesList}) {
 
   const [data, setData] = useState(DataHelper.data)
   const [project,] = useContext(ProjectContext)
-  const [, forceUpdate] = useReducer(x => x + 1, 0);
-
+  const [currentType, setCurrentType] = useState('all')
 
   function changeType(newType) {
     const newProjects = DataHelper.data.filter(element => newType === 'all' || element.type === newType)
+    setCurrentType(newType)
     setData(newProjects)
   }
 
@@ -29,6 +29,9 @@ export default function ProjectList({typesList}) {
               return <li
                 className="type-element" key={element}
                 onClick={() => changeType(element)}
+                style={{
+                  color: currentType === element ? 'white' : ''
+                }}
               > #{element} </li>
             })
           }
@@ -51,7 +54,6 @@ export default function ProjectList({typesList}) {
                 })
               }
           </div>
-          <div>
             {
               <Info
                 source={DataHelper.data[project].source}
@@ -59,7 +61,6 @@ export default function ProjectList({typesList}) {
                 longDescription={DataHelper.data[project].longDescription}
               />
             }
-          </div>
         </div>
       </div>
     </div>
