@@ -1,3 +1,7 @@
 p {
   font-family: "JetBrains Mono", sans-serif;
 }
+
+html {
+  overflow-x: hidden;
+}

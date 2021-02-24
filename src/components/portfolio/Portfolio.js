@@ -2,6 +2,7 @@ import React from 'react'
 import './Portfolio.css'
 import ProjectList from "./resume-list/PorjectList";
 import CurrentProjectProvider from "../../providers/CurrentProjectProvider";
+import Title from "../titles/TItle";
 
 export default function Portfolio() {
 
@@ -9,9 +10,8 @@ export default function Portfolio() {
 
   return (
     <section>
-      <div id="portfolio-before"/>
       <div id="portfolio">
-        <h1> portfolio </h1>
+        <Title> portfolio </Title>
         <CurrentProjectProvider>
           <ProjectList typesList={typesList}/>
         </CurrentProjectProvider>

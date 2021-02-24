@@ -1,5 +1,7 @@
 import React from 'react'
 import './Education.css'
+import Title from "../titles/TItle";
+import EducationCard from "./EducationCard/EducationCard";
 
 export default function Education() {
   return (
@@ -7,10 +9,22 @@ export default function Education() {
       <div id="experience-before"/>
       <div className="experience">
         <div>
-          <h1> education </h1>
+          <Title> education </Title>
+          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
+          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
+          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
+          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
+          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
+          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
         </div>
         <div>
-          <h1> experience </h1>
+          <Title> experience </Title>
+          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
+          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
+          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
+          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
+          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
+          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
         </div>
       </div>
     </section>

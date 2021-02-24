@@ -43,13 +43,3 @@ section:not(:first-child) > div:last-child {
   height: 90%;
 }
 
-div[id$="before"] {
-  padding-bottom: 2%;
-}
-
-section h1 {
-  font-size: 2rem;
-  position: relative;
-  left: 5vw;
-  top: 2vh;
-}

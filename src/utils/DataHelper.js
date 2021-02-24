@@ -1,17 +1,23 @@
 export default class DataHelper {
 
   static lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent massa purus, vestibulum ac tempor sed, luctus a mauris. In vitae enim non orci dignissim blandit non at dolor. Fusce posuere lacinia sem in sollicitudin. Quisque hendrerit quam vel quam bibendum.'
-  static data = this.getData()
+  static projects = this.getProjects()
+  static experience = this.getExperience()
 
-  static getData() {
+  static getProjects() {
     return [
       {
         title: 'EcoGis',
         shortDescription: 'Ecology tracker in Moscow',
         longDescription: 'hello world i love anime and плановую экономику',
-        source: 'https://diskomir.ru/upload/iblock/79a/79a7e4ef1582a9f30df77bd8771266c8.jpg',
+        source: 'https://i.ibb.co/ZznC6JB/a.jpg',
         id: 'a',
-        type: 'mobile'
+        type: 'mobile',
+        stack: [
+          'Kotlin',
+          'Mapbox',
+          'GIS Algorithms',
+        ]
       },
       {
         title: 'a.contoller)',
@@ -19,7 +25,12 @@ export default class DataHelper {
         longDescription: this.lorem.substring(0, 200),
         source: 'https://images.unsplash.com/photo-1593786189301-461faf967779?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80',
         id: 'b',
-        type: 'web'
+        type: 'web',
+        stack: [
+          'Android',
+          'Mapbox',
+          'Anime',
+        ]
       },
       {
         title: 'Tokyo Ghoul',
@@ -27,7 +38,12 @@ export default class DataHelper {
         longDescription: this.lorem,
         source: 'https://images.unsplash.com/photo-1611888258376-8b1b2026262b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
         id: 'c',
-        type: 'web'
+        type: 'web',
+        stack: [
+          'Evangelion',
+          'Mapbox',
+          'GIS Algorithms',
+        ]
       },
       {
         title: 'ZeroTwo ',
@@ -37,6 +53,24 @@ export default class DataHelper {
         id: 'd',
         type: 'backend'
       },
+      {
+        title: 'Why not?',
+        shortDescription: 'Control your smartphone with your eyes',
+        longDescription: this.lorem.substring(0, 300),
+        source: 'https://images.unsplash.com/photo-1611128371650-fea6baac63ab?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80',
+        id: 'e',
+        type: 'backend'
+      },
+    ]
+  }
+
+  static getExperience() {
+    return [
+      {
+        place: 'University ITMO',
+        date: '08.2002 - now',
+        post: 'student'
+      }
     ]
   }
 }

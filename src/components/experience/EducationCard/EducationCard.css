@@ -1,0 +1,18 @@
+.experience-card * {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.text-with-borders::after {
+    content: "//";
+    color: #a7c5eb;
+    margin: 0 2px;
+}
+
+.text-with-borders {
+    margin-left: 40px;
+}
+
+.experience-card h1 {
+    font-size: 1.7rem;
+}

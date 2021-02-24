@@ -1,7 +1,7 @@
 import './Home.css'
 import React from 'react'
-import home from './img/home.jpg'
-import binaryCode from './img/binary_code.png'
+import home from '../../img/home.jpg'
+import binaryCode from '../../img/binary_code.png'
 
 export default function Home({menuItems}) {
 

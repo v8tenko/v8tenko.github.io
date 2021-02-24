@@ -1,11 +1,15 @@
 .info {
     height: 100%;
+    overflow: hidden;
 }
 
 .info > .projects-image {
-    width: 100%;
+    width: 1000%;
     height: 50%;
     margin-bottom: 2vh;
+    /*
+    animation: animate-image 400s linear infinite;
+    */
 }
 
 .info p {
@@ -15,5 +19,33 @@
 .printing > p.title {
     color: white;
     font-size: 2rem;
+}
+
+.info > .content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.content > .description {
+    flex: 7;
+}
+
+.content > .stack {
+    flex: 2;
+    height: 100%;
+    font-size: .8rem;
+}
+
+@keyframes animate-image {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
 }
 

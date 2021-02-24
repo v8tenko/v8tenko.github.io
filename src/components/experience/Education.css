@@ -1,4 +1,5 @@
 .experience {
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -10,3 +11,15 @@
     width: 100%;
     flex: 1 1;
 }
+
+.experience > div > *:nth-child(2) {
+    margin-top: 20px;
+}
+
+.experience .experience-card  {
+    position: relative;
+    left: 5vw;
+    top: 2vh;
+    padding: 10px 15px 0  ;
+}
+
