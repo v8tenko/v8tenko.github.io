@@ -1,33 +1,25 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {forwardRef, useContext} from 'react'
 import './Card.css'
 import {ProjectContext} from "../../../../providers/CurrentProjectProvider";
 import DataHelper from "../../../../utils/DataHelper";
 
 
-export default function Card({title, shortDescription, id}) {
 
-  const [project, setCurrentProject] = useContext(ProjectContext)
-  const [colored, setColored] = useState(DataHelper.projects[project].id === id)
+const Card = forwardRef(({title, shortDescription, id, onClick}, ref) => {
 
-  useEffect(() => {
-    const callback = () => {
-      setCurrentProject(DataHelper.projects.findIndex(element => element.id === id))
-    }
-    const element = document.querySelector(`#${id}`)
-    element.addEventListener('click', callback)
-
-    return () => element.removeEventListener('mouseleave', callback)
-  }, [id, setCurrentProject, title, shortDescription])
-
-  useEffect(() => setColored(DataHelper.projects[project].id === id), [id, project])
+  const {currentProject} = useContext(ProjectContext).project
 
   return (
     <div
-        className={`card${colored ? " colored" : ''}`}
-        id={id}
+      ref={ref}
+      className={`card${DataHelper.projects.findIndex(element => element.id === id) === currentProject ? " colored" : ''}`}
+      id={id}
+      onClick={onClick}
     >
-        <p className="title"> {title} </p>
-        <p> {shortDescription} </p>
+      <p className="title"> {title} </p>
+      <p> {shortDescription} </p>
     </div>
   )
-}
+})
+
+export default Card

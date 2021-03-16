@@ -1,18 +1,18 @@
 import React from 'react'
 import './Info.css'
 import Printing from "../../../printing-animation/Printing";
-
+import { isMobileOnly } from 'react-device-detect'
 
 export default function Info({source, title, longDescription, stack}) {
 
   return (
     <div className="info">
-      <div className="projects-image" style={{
+      {!isMobileOnly && <div className="projects-image" style={{
         backgroundImage: `url(${source})`,
-        backgroundPosition: 'right center',
+        backgroundPosition: 'center center',
         backgroundRepeat: 'repeat-x',
-        backgroundSize: '10% 100%'
-      }}/>
+        backgroundSize: 'cover',
+      }}/>}
 
       <Printing delay={30} showCursor={true} className='title'>
         {title}

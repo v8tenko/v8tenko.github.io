@@ -3,17 +3,20 @@ import './Portfolio.css'
 import ProjectList from "./resume-list/PorjectList";
 import CurrentProjectProvider from "../../providers/CurrentProjectProvider";
 import Title from "../titles/TItle";
+import FetchComponent from "../fetch-component/FetchComponent";
 
 export default function Portfolio() {
 
-  const typesList = ['all', 'web', 'mobile', 'backend']
+  const typesList = ['все', 'web', 'mobile', 'backend']
 
   return (
     <section>
       <div id="portfolio">
-        <Title> portfolio </Title>
+        <Title> портфолио </Title>
         <CurrentProjectProvider>
-          <ProjectList typesList={typesList}/>
+          <FetchComponent name={'projects'} url={'https://v8tenko-backend.herokuapp.com/projects'}>
+            <ProjectList typesList={typesList}/>
+          </FetchComponent>
         </CurrentProjectProvider>
       </div>
     </section>

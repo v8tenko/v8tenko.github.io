@@ -1,13 +1,12 @@
 #projects {
     width: 100%;
     display: flex;
-    align-items: center;
+    min-height: 70vh;
 }
 
 #projects > .content {
     width: 90%;
-    height: 90%;
-    margin-left: 17vh;
+    margin-left: 10vw;
 }
 
 .type-element {
@@ -24,17 +23,28 @@
 
 .projects-grid {
     margin-top: 2%;
-    height: 90%;
     width: 100%;
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
 }
 
 .projects-grid > .projects-name {
-    flex: 1.55 1;
+    flex: 2 1;
 }
 
 .projects-grid .info {
     flex: 1.2 1;
 }
 
+.content {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.content > ul {
+    flex: 1 1;
+}
+
+.content > .projects-grid {
+    flex: 20 1;
+}

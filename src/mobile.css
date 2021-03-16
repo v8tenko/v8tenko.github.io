@@ -7,6 +7,16 @@ p {
     color: var(--black-white);
 }
 
+section {
+    display: inline-block;
+    padding: 10px 0;
+}
+
+
+.types {
+    margin: 2px 0;
+}
+
 footer {
     width: 90%;
     display: flex;
@@ -33,13 +43,15 @@ section > .content {
 
 .home-image {
     width: 90%;
-    height: 60%;
+    height: 70vh;
     margin: 10% auto 0;
 }
 
+
 #projects > .content {
-    margin-left: 0;
+    margin-left: 0 !important;
     display: flex;
+    width: 100%;
     flex-direction: column;
 }
 
@@ -69,6 +81,74 @@ section > .content {
     border: 2px white solid;
 }
 
+.experience {
+    display: inline-block;
+}
+
 .content p {
     font-size: 1rem;
+}
+
+
+.text-with-borders::after {
+    content: "";
+    margin: 0;
+}
+
+.text-with-borders {
+    margin: 0;
+    font-size: 26px;
+}
+
+.experience-card p {
+    margin-left: 10%;
+}
+
+.contact > .content {
+    flex-direction: column;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0;
+}
+
+.write, .contacts {
+    height: 50%;
+    width: 100%;
+    padding-bottom: 10%;
+}
+
+.content > .write > form {
+    width: 70%;
+}
+
+.content > .write {
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10%;
+    left: 0;
+}
+
+.contacts {
+    justify-content: center;
+    align-items: center;
+}
+
+h1.global-title {
+    bottom: 0;
+}
+
+.info > .content {
+    flex-direction: column;
+}
+
+.card {
+    width: 100%;
+}
+
+.close {
+    color: white;
+}
+
+.center-content li {
+    list-style-type: none;
 }

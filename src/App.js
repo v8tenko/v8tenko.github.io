@@ -1,70 +1,56 @@
 import './App.css';
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import Home from './components/Home/Home'
 import Portfolio from "./components/portfolio/Portfolio";
-import Education from "./components/experience/Education";
 import Contact from "./components/contact/Contact";
 import {isMobileOnly} from 'react-device-detect';
-import home from './img/home.jpg';
-import CurrentProjectProvider from "./providers/CurrentProjectProvider";
-import ProjectList from "./components/portfolio/resume-list/PorjectList";
+import Education from "./components/experience/Education";
+import ApiKeyProvider, {ApiKeyContext} from "./providers/ApiKeyProvider";
+import DataHelper from "./utils/DataHelper";
+import {toast, ToastContainer} from "react-toastify";
 
 function App() {
 
+  toast.configure()
+
   const menuElements = [
     'v8tenko',
-    'portfolio',
-    'education',
-    'experience',
-    'contact'
+    'портфолио',
+    'образование',
+    'связь'
   ]
 
-  const typesList = ['all', 'web', 'mobile', 'backend']
+
+  fetch('https://v8tenko-backend.herokuapp.com/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      username: "glebik8",
+      password: "ilovedota2"
+    })
+  }).then(res => res.json())
+    .then(res => res.accessToken)
+    .then(res => {
+      DataHelper.apiKey = res
+    })
 
 
   if (isMobileOnly) {
     import('./mobile.css')
   }
 
-  if (isMobileOnly) {
-    return (
-      <div
-        className="App">
-        <section>
-          <footer>
-            <p> v8tenko </p>
-            <p> menu </p>
-          </footer>
-          <div className="content">
-            <h1>hi, I am </h1>
-            <h1> Gleb Voitenko </h1>
-            <p> and I'm a software engineer </p>
-          </div>
-          <div
-            style={{
-              backgroundImage: `url(${home})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center center'
-            }}
-            className="home-image"
-          />
-        </section>
-        <section>
-          <CurrentProjectProvider>
-            <ProjectList typesList={typesList}/>
-          </CurrentProjectProvider>
-        </section>
-      </div>
-    )
-  }
-
   return (
-    <div className=".App">
-      <Home menuItems={menuElements}/>
-      <Portfolio/>
-      <Education/>
-      <Contact/>
-    </div>
+    <ApiKeyProvider>
+      <div className=".App">
+        <Home menuItems={menuElements}/>
+        <Portfolio/>
+        <Education/>
+        <Contact/>
+        <ToastContainer />
+      </div>
+    </ApiKeyProvider>
   )
 }
 

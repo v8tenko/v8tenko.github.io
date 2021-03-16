@@ -1,3 +1,7 @@
+#portfolio-before {
+    padding-top: 15vh;
+}
+
 .home {
     height: 100vh;
     display: flex;
@@ -46,7 +50,7 @@
 }
 
 .name > p:first-child:before {
-    content: "// hello world";
+    content: "// привет, мир";
     font-size: .9rem;
 }
 
@@ -58,7 +62,6 @@
 
 #menu ul {
     position: fixed;
-    right: 8%;
     top: 26%;
 }
 
@@ -94,13 +97,12 @@
 }
 
 #menu {
-    width: 40%;
     height: 100%;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-left: 12%;
+    margin-left: 10%;
 }
 
 .menu-element {
@@ -108,24 +110,22 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
+    user-select: none;
     color: rgba(255, 255, 255, .6);
     font-size: 1.4rem;
-    transition: all 200ms;
 }
 
 .menu-element:not(:first-child) {
     padding: .8vh 0;
 }
 
-.menu-element > p {
-    color: rgba(255, 255, 255, .6);
-    font-size: 1.4rem;
-    transition: all 400ms;
-    transform-origin: 70% 50%;
-}
-
 .menu-element:hover {
-    text-decoration: line-through;
     color: white;
 }
+
+.menu-element:hover:before {
+    content: "//";
+}
+
 

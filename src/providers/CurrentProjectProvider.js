@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
+import { isMobileOnly } from 'react-device-detect'
 
-export const ProjectContext = React.createContext(0)
+export const ProjectContext = React.createContext({})
 
 export default function CurrentProjectProvider({children}) {
 
-  const [currentProject, setCurrentProject] = useState(0)
+  const [currentProject, setCurrentProject] = useState(isMobileOnly ? -1 : 0)
 
   return (
     <ProjectContext.Provider value={
-      [
-        currentProject,
-        setCurrentProject
-      ]
+      {
+        project: {currentProject, setCurrentProject},
+      }
     }>
       {children}
     </ProjectContext.Provider>

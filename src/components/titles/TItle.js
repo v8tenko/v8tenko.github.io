@@ -3,7 +3,6 @@ import './Title.css'
 
 export default function Title({children}) {
   const title = React.Children.toArray(children).filter(element => element !== '')[0].slice(1, -1)
-  console.log(title)
   return (
     <div>
       <div id={`${title}-before`}/>

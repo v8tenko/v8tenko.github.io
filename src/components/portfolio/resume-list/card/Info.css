@@ -1,11 +1,12 @@
 .info {
-    height: 100%;
     overflow: hidden;
+    display: inline-block;
+    height: 100%;
 }
 
 .info > .projects-image {
-    width: 1000%;
-    height: 50%;
+    width: 100%;
+    height: 30vh;
     margin-bottom: 2vh;
     /*
     animation: animate-image 400s linear infinite;

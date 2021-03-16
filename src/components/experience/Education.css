@@ -1,13 +1,15 @@
 .experience {
     width: 80%;
     display: flex;
+    margin-bottom: 10%;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 }
 
 .experience > div {
-    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
     width: 100%;
     flex: 1 1;
 }
@@ -18,8 +20,8 @@
 
 .experience .experience-card  {
     position: relative;
-    left: 5vw;
-    top: 2vh;
-    padding: 10px 15px 0  ;
+    left: 10vw;
+    bottom: 2vh;
+    padding: 10px 0 0  ;
 }
 

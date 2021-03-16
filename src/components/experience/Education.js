@@ -9,23 +9,15 @@ export default function Education() {
       <div id="experience-before"/>
       <div className="experience">
         <div>
-          <Title> education </Title>
-          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
-          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
-          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
-          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
-          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
-          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
+          <Title> образование </Title>
+          <EducationCard place={'Университет ИТМО'} date={'01.2020 - сейчас'} post={'студент'}/>
         </div>
-        <div>
+       {/* <div>
           <Title> experience </Title>
           <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
           <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
           <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
-          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
-          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
-          <EducationCard place={'University ITMO'} date={'08.2002 - now'} post={'student'}/>
-        </div>
+        </div>*/}
       </div>
     </section>
   )

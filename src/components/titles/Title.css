@@ -1,11 +1,16 @@
 div[id$="before"] {
-    margin-bottom: 1%;
 }
 
 h1.global-title {
+    margin: 2vh 0;
     font-size: 2rem;
     position: relative;
     left: 5vw;
-    top: 2vh;
+    bottom: 2vh;
+    display: inline;
+}
+
+div:has(.global-title) {
+    display: inline;
 }
 

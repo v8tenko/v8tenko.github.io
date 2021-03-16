@@ -1,14 +1,13 @@
 
 #portfolio {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
-    justify-content: space-around;
     flex-wrap: nowrap;
-
+    justify-content: space-between;
 }
 
 #portfolio > h1 {
-    flex: 1 0;
+    flex: 1 1;
 }
 
 #portfolio > #projects {
