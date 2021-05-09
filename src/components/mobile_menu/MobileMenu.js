@@ -1,5 +1,6 @@
 import React from 'react'
 import './MobileMenu.css'
+import DownloadCV from "../download_pfd/DownloadCv";
 
 export default function MobileMenu({callback, shown, menuElements}) {
 
@@ -20,6 +21,7 @@ export default function MobileMenu({callback, shown, menuElements}) {
           {menuElements.map((element, index) => {
             return <li key={index} onClick={() => moveTo(element)}> {element} </li>
           })}
+          <DownloadCV />
         </ul>
       </div>
     </div>

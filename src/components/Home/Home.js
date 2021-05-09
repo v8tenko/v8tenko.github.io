@@ -4,6 +4,7 @@ import home from '../../img/home.jpg'
 import binaryCode from '../../img/binary_code.png'
 import {isMobileOnly} from 'react-device-detect'
 import MobileMenu from "../mobile_menu/MobileMenu";
+import DownloadCV from "../download_pfd/DownloadCv";
 
 export default function Home({menuItems}) {
 
@@ -68,6 +69,7 @@ export default function Home({menuItems}) {
                     >  {content}  </li>
                   })
                 }
+                <DownloadCV />
               </ul>
               <MobileMenu
                 menuElements={menuItems}
