@@ -1,35 +1,40 @@
 import React, {useEffect, useState} from 'react'
 import HashLoader from "react-spinners/HashLoader";
 import DataHelper from "../../utils/DataHelper";
+import {isMobileOnly} from 'react-device-detect'
 
 
-export default function FetchComponent({url, name, children}) {
-  let [data, setData] = useState({})
+export default function FetchComponent({promise, url, name, children, isMobile}) {
+  let [data, setData] = useState(null)
 
   useEffect(() => {
-    fetch(url)
-      .then(res => res.json())
-      .then(res => {
-        DataHelper[name] = res
-        setData(res)
-      })
-  }, [])
+    if (url) {
+      fetch(url)
+        .then(res => res.json())
+        .then(res => {
+          DataHelper[name] = res
+          setData(res)
+        })
+    } else {
+      promise.then(setData)
+    }
+
+  }, [url, name, promise]);
 
 
-  if (data.length >= 0) {
-      return children
+  if (data || !(isMobile && isMobileOnly)) {
+    return children
   }
-  return (
-    <div style={{
-      height: '100%',
-      width: '100%',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    }}>
-      <HashLoader color="white" loading={true} size={150} />
-    </div>
-  )
 
-
+  return <Loading/>
 }
+
+export const Loading = () => <div style={{
+  height: '80vh',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+}}>
+  <HashLoader color="white" loading={true} size={150}/>
+</div>

@@ -12,6 +12,18 @@ section {
     padding: 10px 0;
 }
 
+section:first-of-type {
+    min-height: 100vh;
+}
+
+.projects-name {
+    min-height: 100vh;
+}
+
+.info p {
+    font-size: 1rem;
+}
+
 
 .types {
     margin: 2px 0;
@@ -29,21 +41,21 @@ footer {
 section > .content {
     margin-top: 10%;
     margin-left: 5%;
-    width: 70%;
+    width: 80%;
     overflow: hidden;
 }
 
 .content > h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 .content > p {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
 }
 
 .home-image {
     width: 90%;
-    height: 70vh;
+    height: 50vh;
     margin: 10% auto 0;
 }
 
@@ -84,11 +96,6 @@ section > .content {
 .experience {
     display: inline-block;
 }
-
-.content p {
-    font-size: 1rem;
-}
-
 
 .text-with-borders::after {
     content: "";
@@ -152,3 +159,5 @@ h1.global-title {
 .center-content li {
     list-style-type: none;
 }
+
+

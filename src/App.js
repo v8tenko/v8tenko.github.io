@@ -1,13 +1,14 @@
 import './App.css';
-import React, {useContext, useEffect} from "react";
-import Home from './components/Home/Home'
+import React from "react";
+import Home from './components/home/Home'
 import Portfolio from "./components/portfolio/Portfolio";
 import Contact from "./components/contact/Contact";
 import {isMobileOnly} from 'react-device-detect';
 import Education from "./components/experience/Education";
-import ApiKeyProvider, {ApiKeyContext} from "./providers/ApiKeyProvider";
 import DataHelper from "./utils/DataHelper";
 import {toast, ToastContainer} from "react-toastify";
+import FetchComponent from "./components/fetch-component/FetchComponent";
+import {Utils} from "./utils/utils";
 
 function App() {
 
@@ -43,15 +44,13 @@ function App() {
 
 
   return (
-    <ApiKeyProvider>
-      <div className=".App">
+      <FetchComponent promise={Utils.wait(500)} isMobile>
         <Home menuItems={menuElements}/>
         <Portfolio/>
         <Education/>
         <Contact/>
         <ToastContainer />
-      </div>
-    </ApiKeyProvider>
+      </FetchComponent>
   )
 }
 

@@ -1,7 +1,7 @@
 export default class DataHelper {
 
   static lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent massa purus, vestibulum ac tempor sed, luctus a mauris. In vitae enim non orci dignissim blandit non at dolor. Fusce posuere lacinia sem in sollicitudin. Quisque hendrerit quam vel quam bibendum.'
-  static projects = this.getProjects()
+  static projects = []
   static experience = this.getExperience()
   static apiKey = null
 

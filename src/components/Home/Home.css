@@ -50,7 +50,7 @@
 }
 
 .name > p:first-child:before {
-    content: "// привет, мир";
+    content: "// Hello world";
     font-size: .9rem;
 }
 
@@ -126,6 +126,18 @@
 
 .menu-element:hover:before {
     content: "//";
+}
+
+.cv-saver {
+    margin-top: 20px;
+    background: none;
+    border: none;
+    transition: all 200ms;
+    font-size: 25px;
+}
+
+.cv-saver:hover {
+    opacity: .4;
 }
 
 

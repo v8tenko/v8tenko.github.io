@@ -1,4 +1,4 @@
-import React, {useContext, useRef, useState} from 'react'
+import React, {useContext, useEffect, useRef, useState} from 'react'
 import './ProjectList.css'
 import Card from "./card/Card";
 import Info from "./card/Info";
@@ -6,20 +6,35 @@ import DataHelper from "../../../utils/DataHelper";
 import {ProjectContext} from "../../../providers/CurrentProjectProvider";
 import {isMobileOnly, isBrowser} from 'react-device-detect'
 import FlipMove from 'react-flip-move';
-
+import {Loading} from "../../fetch-component/FetchComponent";
 
 export default function ProjectList({typesList}) {
 
   const [data, setData] = useState(DataHelper.projects)
   const {currentProject: project, setCurrentProject} = useContext(ProjectContext).project
   const current = useRef(DataHelper.projects[project])
-  const [currentType, setCurrentType] = useState('all')
+  const [currentType, setCurrentType] = useState('все')
+
+  useEffect(() => {
+    fetch('https://v8tenko-backend.herokuapp.com/projects')
+      .then(res => res.json())
+      .then(res => {
+        DataHelper.projects = res
+        current.current = res[project]
+        setData(res)
+      })
+
+  }, []);
 
 
   function changeType(newType) {
     const newProjects = DataHelper.projects.filter(element => newType === 'все' || element.type.includes(newType))
     setCurrentType(newType)
     setData(newProjects)
+  }
+
+  if (data.length === 0) {
+    return <Loading />
   }
 
   return (
@@ -64,14 +79,13 @@ export default function ProjectList({typesList}) {
                     />
                     {
                       isMobileOnly
-                    && index === project
-                    && DataHelper.projects[project]
-                    && <Info
-                      source={DataHelper.projects[project].source}
-                      title={DataHelper.projects[project].title}
-                      longDescription={DataHelper.projects[project].longDescription}
-                      stack={DataHelper.projects[project].stack}
-                    />}
+                      && index === project
+                      && <Info
+                        source={DataHelper.projects[project].source}
+                        title={DataHelper.projects[project].title}
+                        longDescription={DataHelper.projects[project].longDescription}
+                        stack={DataHelper.projects[project].stack}
+                      />}
                   </div>
 
                 })
@@ -80,6 +94,7 @@ export default function ProjectList({typesList}) {
           </div>
           {
             isBrowser
+            && current.current
             && <Info
               source={current.current.source}
               title={current.current.title}
