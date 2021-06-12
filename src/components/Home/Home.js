@@ -1,7 +1,7 @@
 import './Home.css'
 import React, {useState} from 'react'
-import home from '../../img/home.jpg'
-import binaryCode from '../../img/binary_code.png'
+import home from '../../img/home.webp'
+import binaryCode from '../../img/binary_code.webp'
 import {isMobileOnly} from 'react-device-detect'
 import MobileMenu from "../mobile_menu/MobileMenu";
 import DownloadCV from "../download_pfd/DownloadCv";
